@@ -1,2 +1,3 @@
-const app = new AppContainer 
-app.getFoods()
+const app = new AppContainer; 
+app.getFoods();
+app.bindEventListeners();
