@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
     def index 
-        render :json => Food.all.to_json
+        render :json => Food.all, :include => :meal
     end 
 end

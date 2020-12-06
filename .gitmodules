@@ -1,0 +1,3 @@
+[submodule "meal-planner-api"]
+	path = meal-planner-api
+	url = https://github.com/Lamtammy1515/meal-planner.git
