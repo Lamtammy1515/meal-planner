@@ -1,6 +1,9 @@
 class Food { 
-    constructor(entree) {
+    constructor(entree, meal) {
         this.entree = entree;
+        this.meal = meal;
+        AppContainer.foods.push(this);
+    
     }
 
 }
