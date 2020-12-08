@@ -41,27 +41,15 @@
 
     getRandomFoods() {
         let randomFoods = [];
-
-        ////////////////////////////////////////////////
-       // AppContainer.meals.forEach(food => {
-       //     randomFoods.push(Food.byMeal(meal.meal)[Math.floor(Math.random()*Food.byMeal(meal.meal).length)])
-      //  });
-        //////////////////////////////////////////
-
-
-        ///////////////////////
-        for (let i = 0; i < 3; i++) {
-            //TODO: change this random algo to select a food for each meal rather than across all meals
-        randomFoods.push(AppContainer.foods[Math.floor(Math.random()*AppContainer.foods.length)]);
-        };
-        ///////////////////////////
-
-
+        AppContainer.meals.forEach(meal => {
+            randomFoods.push(Food.byMeal(meal.meal)[Math.floor(Math.random()*Food.byMeal(meal.meal).length)])
+        });
 
        // instantiate a mealplan instance with the foods
        new MealPlan(randomFoods);
        // insert data into DOM 
        const mealPlanDiv = document.getElementById('mealPlan');
+       mealPlanDiv.innerHTML = "";
        AppContainer.mealPlan.foods.forEach(mealPlan => {
            const foodDiv = document.createElement('div');
            foodDiv.innerText = mealPlan.entree;
@@ -74,7 +62,11 @@
                method: 'DELETE'
            })
            .then(response => response.json())
-           .then(data => console.log(data))
+           .then(data => {
+               console.log(data);
+               Food.delete(data.id);
+               this.renderFoods();
+            })
            .catch(err => alert(err))
        })
        
@@ -93,11 +85,9 @@
             console.log(data)
             data.forEach(food => {
                 new Food(food.id, food.entree, food.meal)
-                ////////////////////////////////////
-                //if (!AppContainer.meals.map(meal => meal.meal).includes(food.meal.meal)) {
-                //    new Meal(food.meal.meal)
-               // } 
-                /////////////////////////////////////////
+                if (!AppContainer.meals.map(meal => meal.meal).includes(food.meal.meal)) {
+                    new Meal(food.meal.meal)
+                } 
             });
                    //call renderFoods
                    this.renderFoods();

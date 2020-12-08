@@ -5,15 +5,16 @@ class Food {
         this.id = id;
         AppContainer.foods.push(this);
         
-        
     }
 
+    static delete(foodId) {
+      AppContainer.foods = AppContainer.foods.filter(food => parseInt(foodId) !== food.id);
+
+    }
     
-///////
- //   static byMeal(mealMeal) {
-     //   return AppContainer.foods.filter(food => food.meal.meal === mealMeal)
-     //}
-    ////////////
+  static byMeal(mealMeal) {
+      return AppContainer.foods.filter(food => food.meal.meal === mealMeal)
+    }
 }
 
 
