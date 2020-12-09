@@ -13,7 +13,7 @@
         newFoodForm.addEventListener('submit', () => AppAdapter.createFood(event));
     }
 
-   //RETRIEVING 1 RANDOM FOOD FROM EACH MEAL
+   //RETRIEVING 1 RANDOM FOOD ENTREE FROM EACH MEAL
    static generateRandomFoods(){
         let randomFoods = [];
         AppContainer.meals.forEach(meal => {

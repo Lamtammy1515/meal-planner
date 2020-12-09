@@ -9,7 +9,7 @@ class MealPlan {
          //generate random foods
          const randomFoods = AppContainer.generateRandomFoods();
 
-        // instantiate a mealplan instance with the foods
+        // instantiate a mealplan instance with the food entrees
         new MealPlan(randomFoods);
         
         // make fetch request to delete foods from db (IT'S TRIGGERING IT)
