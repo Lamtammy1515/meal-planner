@@ -5,98 +5,48 @@
     url = "http://localhost:3000";
     static mealPlan = {};
 
+    //ADD EVENT LISTENERS
     bindEventListeners() {
-        const btn = document.getElementById('createMealPlan');
-        btn.addEventListener('click', () => this.getRandomFoods())
-
-        const  newFoodForm = document.getElementById('newFood');
-        newFoodForm.addEventListener('submit', () => this.createFood(event));
+        AppListener.createFoodListener();
+        AppListener.createMealPlanListener();
     }
 
-    createFood(event) {
-        event.preventDefault();
-        //maybe use object destructuring to be more dry
-        const data = event.target;
-        // this => instace of app container if we bind the app instance execution context when we pass in the callback function as argument to the event listener
-        console.log(this)
-        fetch(`${this.url}/foods`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                entree: data.food.value,
-                meal: data.children[2].value   //probably refactor this to be more abstract
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-           const { id, entree, meal } = data;
-           new Food(id, entree, meal)
-            this.renderFoods();
-        })
-        .catch(err => console.log(err));
-    }
+    //retrieving three random foods, deleting them, and populating them in the DOM
+   static generateMealPlan() {
+        //generate random foods
+       const randomFoods = this.generateRandomFoods();
+        // instantiate a mealplan instance with the foods
+        new MealPlan(randomFoods);
 
-    getRandomFoods() {
+        // make fetch request to delete foods from db (IT'S TRIGGERING IT)
+        AppAdapter.deleteFoods(randomFoods);
+
+        // insert data into DOM 
+        this.renderMealPlan();
+        }
+
+
+    // RETRIEVING 1 RANDOM FOOD FROM EACH MEAL
+   static generateRandomFoods(){
         let randomFoods = [];
         AppContainer.meals.forEach(meal => {
             randomFoods.push(Food.byMeal(meal.meal)[Math.floor(Math.random()*Food.byMeal(meal.meal).length)])
         });
-
-       // instantiate a mealplan instance with the foods
-       new MealPlan(randomFoods);
-       // insert data into DOM 
-       const mealPlanDiv = document.getElementById('mealPlan');
-       mealPlanDiv.innerHTML = "";
-       AppContainer.mealPlan.foods.forEach(mealPlan => {
-           const foodDiv = document.createElement('div');
-           foodDiv.innerText = mealPlan.entree;
-           mealPlanDiv.appendChild(foodDiv);
-       })
-       
-
-       randomFoods.forEach(food => {
-           fetch(`${this.url}/foods/${food.id}`, {
-               method: 'DELETE'
-           })
-           .then(response => response.json())
-           .then(data => {
-               console.log(data);
-               Food.delete(data.id);
-               this.renderFoods();
-            })
-           .catch(err => alert(err))
-       })
-       
-    }
-
-    //renderMealPlan() {
-
-    //}
-
-    getFoods(){
-        //make a fetch request to /foods
-        fetch(this.url + '/foods')
-        .then(response => response.json())
-         //populate the foods & meals property with the returned data
-        .then(data => {
-            console.log(data)
-            data.forEach(food => {
-                new Food(food.id, food.entree, food.meal)
-                if (!AppContainer.meals.map(meal => meal.meal).includes(food.meal.meal)) {
-                    new Meal(food.meal.meal)
-                } 
-            });
-                   //call renderFoods
-                   this.renderFoods();
+        return randomFoods;
+  }
+    // ADD MEAL PLAN TO DOM
+   static renderMealPlan(){
+        const mealPlanDiv = document.getElementById('mealPlan');
+        mealPlanDiv.innerHTML = "";
+        AppContainer.mealPlan.foods.forEach(mealPlan => {
+            const foodDiv = document.createElement('div');
+            foodDiv.innerText = mealPlan.entree;
+            mealPlanDiv.appendChild(foodDiv);
         })
-        .catch(err => alert(err));
-    }
+        }
 
-
-    renderFoods() {
+    //POPULATING DOM WITH FOOD DATA FOR EACH MEAL
+    static renderFoods() {
         //create DOM nodes and insert data into them to render in the DOM 
         const breakfastSelect = document.getElementById('breakfast');
         const lunchSelect = document.getElementById('lunch');
@@ -124,4 +74,5 @@
             }
         })
     }
+
 }
