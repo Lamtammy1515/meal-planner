@@ -21,7 +21,7 @@ class AppAdapter {
     .catch(err => alert(err));
 }
 
-// Create food 
+// Create food [POST REQUEST]
     static createFood(event) {
         event.preventDefault();
         const data = event.target;
@@ -43,10 +43,11 @@ class AppAdapter {
            new Food(id, entree, meal)
             AppContainer.renderFoods();
         })
+
         .catch(err => console.log(err));
     }
-
-    //delete foods(3)
+    
+    //delete foods(3) [DELETE REQUEST]
 
   static deleteFoods(foods) {
        foods.forEach(food => {
