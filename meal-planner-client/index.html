@@ -1,22 +1,31 @@
 <html lang="en">
 <head>
+    <h1>The Random Meal Planner</h1>
+    <style>
+    body {
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/000/127/178/small/food-vector-pattern.jpg");
+    }
+
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Meal Planner</title>
+    <title>The Random Meal Planner</title>
 </head>
 <body>
-    <label for="breakfast">Breakfast</label>
-    <select name="" id="breakfast"></select>
-    <label for="lunch">Lunch</label>
-    <select name="" id="lunch"></select>
-    <label for="dinner">Dinner</label>
-    <select name="" id="dinner"></select>
-    <button id="createMealPlan">Generate Meal Plan</button>
-    <div id="mealPlan"></div> 
+    <h3>
+
+    <label for="breakfast">Breakfast:</label>
+    <select name="" id="breakfast"></select> </br>
+    <label for="lunch">Lunch:</label>
+    <select name="" id="lunch"></select></br>
+    <label for="dinner">Dinner:</label>
+    <select name="" id="dinner"></select></br></br>
+    <button id="createMealPlan">Generate Meal Plan</button></br></br>
+    <div id="mealPlan"></div></br></br>
 
     <form id="newFood" >
-        <label for="">New Foods</label>
+        <label for="">New Entree:</label>
         <input type="text" name="food">
         <select name="mealSelect" id="mealSelect">
             <option value="breakfast">Breakfast</option>
@@ -25,6 +34,8 @@
         </select>
         <input type="submit">
     </form>
+</h3>
+
     <script src="src/appListener.js"></script>
     <script src="src/appAdapter.js"></script>
     <script src="src/meal.js"></script>
@@ -32,5 +43,6 @@
     <script src="src/food.js"></script>
     <script src="src/appContainer.js"></script>
     <script src="src/index.js"></script>
+
 </body>
 </html>
