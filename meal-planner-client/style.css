@@ -1,19 +1,9 @@
-.button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+.wrapper {
+    width: 60vw;
+    margin: 20px auto;
 
-  div {
-    width: 320px;
-    padding: 10px;
-    border: 5px solid gray;
-    margin: 0;
-  }
+}
+
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/000/127/178/small/food-vector-pattern.jpg");
+}
