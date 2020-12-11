@@ -6,15 +6,16 @@ class MealPlan {
 
     //retrieving three random foods, deleting them, and populating them in the DOM
     static generateMealPlan() {
-         //generate random foods
-         const randomFoods = AppContainer.generateRandomFoods();
+       
+       //  generate random foods
+         const randomFoods = Food.generateRandomFoods();
 
         // instantiate a mealplan instance with the food entrees
         new MealPlan(randomFoods);
         
         // make fetch request to delete foods from db (IT'S TRIGGERING IT)
         AppAdapter.deleteFoods(randomFoods);
-        }
+    }
         
         
     // ADD MEAL PLAN TO DOM

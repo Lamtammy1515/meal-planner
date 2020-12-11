@@ -9,18 +9,9 @@
         const btn = document.getElementById('createMealPlan');
         btn.addEventListener('click', () => MealPlan.generateMealPlan())
 
-        const  newFoodForm = document.getElementById('newFood');
+        const newFoodForm = document.getElementById('newFood');
         newFoodForm.addEventListener('submit', () => AppAdapter.createFood(event));
     }
-
-   //RETRIEVING 1 RANDOM FOOD ENTREE FROM EACH MEAL
-   static generateRandomFoods(){
-        let randomFoods = [];
-        AppContainer.meals.forEach(meal => {
-            randomFoods.push(Food.byMeal(meal.meal)[Math.floor(Math.random()*Food.byMeal(meal.meal).length)])
-        });
-        return randomFoods;
-  }
 
     //POPULATING DOM WITH FOOD DATA FOR EACH MEAL
     static renderFoods() {
