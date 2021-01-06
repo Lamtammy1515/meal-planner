@@ -15,7 +15,7 @@ class AppAdapter {
                 new Meal(food.meal.meal)
             } 
         });
-               //call renderFoods
+               //call renderFoods 
                AppContainer.renderFoods();
     })
     .catch(err => alert(err));

@@ -1,4 +1,4 @@
- class AppContainer{
+ class AppContainer {
     static foods = [];
     static meals = [];
     url = "http://localhost:3000";
@@ -8,6 +8,9 @@
     bindEventListeners() {
         const btn = document.getElementById('createMealPlan');
         btn.addEventListener('click', () => MealPlan.generateMealPlan())
+
+        const btnn = document.getElementById('selectMealPlan')
+        btnn.addEventListener('click', () => SelectMeal.renderSelectedMealPlan())
 
         const newFoodForm = document.getElementById('newFood');
         newFoodForm.addEventListener('submit', () => AppAdapter.createFood(event));

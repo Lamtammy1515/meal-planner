@@ -3,5 +3,4 @@ class Meal {
         this.meal = meal;
         AppContainer.meals.push(this);
     }
-
 }

@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,36 +7,42 @@
     <title>The Random Meal Planner</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body><div class="wrapper">
-    <h1>The Random Meal-Planner</h1>
-    <h3>
-    <label for="breakfast">Breakfast:</label>
-    <select name="" id="breakfast"></select> </br>
-    <label for="lunch">Lunch:</label>
-    <select name="" id="lunch"></select></br>
-    <label for="dinner">Dinner:</label>
-    <select name="" id="dinner"></select></br></br>
-    <button id="createMealPlan">Generate Meal Plan</button></br></br>
-    <div id="mealPlan"></div></br></br>
 
-    <form id="newFood" >
-        <label for="">New Entree:</label>
-        <input type="text" name="food">
-        <select name="mealSelect" id="mealSelect">
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-        </select>
-        <input type="submit">
-    </form>
-</h3>
-</div>
+<body>
+    <div class="wrapper">
+        <h1>The Random Meal-Planner</h1>
+        <h3>
+            <label for="breakfast">Breakfast:</label>
+            <select name="" id="breakfast" ></select> </br>
+            <label for="lunch">Lunch:</label>
+            <select name="" id="lunch" ></select></br>
+            <label for="dinner">Dinner:</label>
+            <select name="" id="dinner" ></select></br></br>
+
+            <form id="newFood">
+                <label for="">New Entree:</label>
+                <input type="text" name="food">
+                <select name="mealSelect" id="mealSelect">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select> 
+                <input type="submit"></br></br>
+            </form>
+
+            <button id="createMealPlan">Generate Random Meal Plan</button></br></br>
+            <div id="mealPlan"></div></br></br>
+
+            <button id="selectMealPlan">Generate Preferred Meal Plan</button></br></br>
+            <div id="meals"></div>
+        </h3>
+    </div>
     <script src="src/appAdapter.js"></script>
-    <script src="src/meal.js"></script>
+    <script src="src/meal.js"></script> 
     <script src="src/mealPlan.js"></script>
+    <script src="src/selectMeal.js"></script>
     <script src="src/food.js"></script>
     <script src="src/appContainer.js"></script>
     <script src="src/index.js"></script>
-
 </body>
 </html>

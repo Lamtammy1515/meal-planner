@@ -4,7 +4,6 @@ class Food {
         this.meal = meal;
         this.id = id;
         AppContainer.foods.push(this);
-        
     }
   
   static delete(foodId) {
@@ -15,13 +14,12 @@ class Food {
       return AppContainer.foods.filter(food => food.meal.meal === mealMeal)
     }
 
-  //RETRIEVING 1 RANDOM FOOD ENTREE FROM EACH MEAL
+ //RETRIEVING 1 RANDOM FOOD ENTREE FROM EACH MEAL
   static generateRandomFoods(){
       let randomFoods = [];
-      AppContainer.meals.forEach(meal => {
+      AppContainer.meals.forEach(meal => {      
           randomFoods.push(Food.byMeal(meal.meal)[Math.floor(Math.random()*Food.byMeal(meal.meal).length)])
       });
       return randomFoods;
   }
-
 }
