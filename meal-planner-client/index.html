@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Random Meal Planner</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
+
+
     <div class="wrapper">
         <h1>The Random Meal-Planner</h1>
         <h3>
@@ -21,15 +24,15 @@
 
             <form id="newFood">
                 <label for="">New Entree:</label>
-                <input type="text" name="food">
+                <input type="text" name="food" id="input">
                 <select name="mealSelect" id="mealSelect">
                     <option value="breakfast">Breakfast</option>
                     <option value="lunch">Lunch</option>
                     <option value="dinner">Dinner</option>
                 </select> 
-                <input type="submit"></br></br>
+                <button type="submit" onClick="return AppContainer.emptyInput()">SUBMIT</button></br></br>
             </form>
-
+            <button id="changeColor"> Change Background </button></br></br>
             <button id="createMealPlan">Generate Random Meal Plan</button></br></br>
             <div id="mealPlan"></div></br></br>
 

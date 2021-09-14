@@ -3,6 +3,7 @@ class SelectMeal {
         this.breakfast = breakfast;
         this.lunch = lunch;
         this.dinner = dinner;
+        AppContainer.selectMealPlan.push(this)
     }
 
     //INSTANTIATING NEW SELECTED MEALPLAN WITH AN ENTREE FROM EACH MEAL

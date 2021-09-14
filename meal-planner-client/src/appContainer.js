@@ -2,7 +2,8 @@
     static foods = [];
     static meals = [];
     url = "http://localhost:3000";
-    static mealPlan = {};
+    static selectMealPlan = [];
+
 
     //ADD EVENT LISTENERS
     bindEventListeners() {
@@ -14,14 +15,29 @@
 
         const newFoodForm = document.getElementById('newFood');
         newFoodForm.addEventListener('submit', () => AppAdapter.createFood(event));
+
+        const color = document.getElementById("changeColor");
+        color.addEventListener('click', () => AppContainer.changeColor());
     }
+
+
+    //FUNCTION PREVENTS SUBMITTING EMPTY "" OR BLANK TO INPUT
+    static emptyInput() {
+        const input = document.getElementById("input");
+        if( input.value.trim() === ""|| input.value.trim() === null) {
+            alert("PLEASE ADD IN NEW ENTREE TO SUBMIT.");
+            return false;
+        }
+        else {
+            console.log("NEW ENTREE ADDED TO LIST")
+            return true;
+        }
+    }
+
 
     //POPULATING DOM WITH FOOD DATA FOR EACH MEAL
     static renderFoods() {
         //create DOM nodes and insert data into them to render in the DOM 
-        const breakfastSelect = document.getElementById('breakfast');
-        const lunchSelect = document.getElementById('lunch');
-        const dinnerSelect = document.getElementById('dinner');
         breakfastSelect.innerHTML = "";
         lunchSelect.innerHTML = "";
         dinnerSelect.innerHTML = "";
@@ -44,4 +60,10 @@
         })
     }
 
+
+    //Changes background to black
+    static changeColor() {
+       const element = document.querySelector("body")
+        element.classList.toggle("change");
+    }
 }

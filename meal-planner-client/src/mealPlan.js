@@ -11,7 +11,7 @@ class MealPlan {
         // instantiate a mealplan instance with the food entrees
         const randomMealPlan = new MealPlan(randomFoods);
 
-        // rendering new instance to DOM
+        // rendering new instantiated instance to DOM
         randomMealPlan.renderMealPlan();
 
         // make fetch request to delete foods from db (IT'S TRIGGERING IT)

@@ -6,10 +6,13 @@ class Food {
         AppContainer.foods.push(this);
     }
   
+
+   //Called this method in AppAdapter.deleteFoods 
   static delete(foodId) {
       AppContainer.foods = AppContainer.foods.filter(food => parseInt(foodId) !== food.id);
     }
     
+  //Filtering all foods in appcontainer by its meal time
   static byMeal(mealMeal) {
       return AppContainer.foods.filter(food => food.meal.meal === mealMeal)
     }

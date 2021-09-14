@@ -8,14 +8,14 @@ class AppAdapter {
     .then(response => response.json())
      //populate the foods & meals property with the returned data
     .then(data => {
-        console.log(data)
+        //console.log(data)
         data.forEach(food => {
             new Food(food.id, food.entree, food.meal)
             if (!AppContainer.meals.map(meal => meal.meal).includes(food.meal.meal)) {
                 new Meal(food.meal.meal)
             } 
         });
-               //call renderFoods 
+               //call method renderFoods() in AppContainer
                AppContainer.renderFoods();
     })
     .catch(err => alert(err));
@@ -43,7 +43,6 @@ class AppAdapter {
            new Food(id, entree, meal)
             AppContainer.renderFoods();
         })
-
         .catch(err => console.log(err));
     }
     
@@ -64,3 +63,6 @@ class AppAdapter {
        
     }
 }
+
+
+
