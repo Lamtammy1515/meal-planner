@@ -8,12 +8,12 @@ This single page application was made using Javascript on the frontend and Ruby 
 
 Clone this repo. 
 
-5. Either right click the index.html file to open in browser, or cd into the frontend directory and use bash to run the frontend.
+Either right click the index.html file to open in browser, or cd into the frontend directory and use bash to run the frontend.
 ```
 cd meal-planner-client
 ```
 
-6. you can also run "python -m SimpleHTTPServer" in your terminal and open 'localhost:8000' in your browser.
+you can also run "python -m SimpleHTTPServer" in your terminal and open 'localhost:8000' in your browser.
 
 
 ## Contributing
