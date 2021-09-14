@@ -25,13 +25,6 @@ https://github.com/Lamtammy1515/meal-planner
 
 
 ## License
-[MIT](https://github.com/Lamtammy1515/PostMeal_Client/blob/main/LICENSE.md)
-INSTRUCTIONS ON HOW TO USE APP
-1. cd into the backend('cd meal-planner-api) directory
-2. Run bundle
-3. Run rails s
-4. Either right click the index.html file to open in browser, or cd into the frontend('cd meal-planner-client) directory and use bash to run the frontend.
-5. you can also run "python -m SimpleHTTPServer" in your terminal and open 'localhost:8000' in your browser.
-
+[MIT](https://github.com/Lamtammy1515/meal-planner/blob/main/LICENSE.md)
 
 
