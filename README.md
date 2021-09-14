@@ -24,4 +24,4 @@ https://github.com/Lamtammy1515/meal-planner
 
 
 ## License
-[MIT](https://github.com/Lamtammy1515/PostMeal_Client/blob/main/LICENSE.md)
+[MIT](https://github.com/Lamtammy1515/meal-planner/blob/main/LICENSE.md)
