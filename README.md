@@ -1,24 +1,27 @@
-# README
+# Welcome to Meal Planner App
+This single page application was made using Javascript on the frontend and Ruby on Rails on the backend. Meal-Planner was originally made for those who need help planning out their meals for the day. Users can either choose what they want for their meals or this application can actually randomize a whole meal for them. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[DEMO](https://youtu.be/JEox41bFciw)
+[BLOG](https://lamtammy1515.github.io/rails_and_javascript_project_4)
 
-Things you may want to cover:
+## Installation
+1. Clone this repo
 
-* Ruby version
+2. In your terminal, cd into the backend directory
+```
+cd meal-planner-api
+```
+3. Run "bundle install"
 
-* System dependencies
+4. Run "rails s" to start the server
 
-* Configuration
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Database creation
+Please make sure to update tests as appropriate.
 
-* Database initialization
+https://github.com/Lamtammy1515/meal-planner
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://github.com/Lamtammy1515/PostMeal_Client/blob/main/LICENSE.md)
