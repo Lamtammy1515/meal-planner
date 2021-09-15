@@ -8,7 +8,6 @@ class AppAdapter {
     .then(response => response.json())
      //populate the foods & meals property with the returned data
     .then(data => {
-        //console.log(data)
         data.forEach(food => {
             new Food(food.id, food.entree, food.meal)
             if (!AppContainer.meals.map(meal => meal.meal).includes(food.meal.meal)) {
@@ -25,7 +24,6 @@ class AppAdapter {
     static createFood(event) {
         event.preventDefault();
         const data = event.target;
-        console.log(this)
         fetch(`${this.url}/foods`, {
             method: 'POST',
             headers: {
